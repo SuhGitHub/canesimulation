@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "author": "Smart Assistive Cane Team",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-v1",
+      "id": "esp1",
+      "top": -41.12,
+      "left": 4.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledRed",
+      "top": -120,
+      "left": 250,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledBlue",
+      "top": -80,
+      "left": 250,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledGreen",
+      "top": -40,
+      "left": 250,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledYellow",
+      "top": 0,
+      "left": 250,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer1",
+      "top": 40,
+      "left": 250,
+      "attrs": { "volume": "0.5" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -110,
+      "left": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -70,
+      "left": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -30,
+      "left": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 10,
+      "left": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 120,
+      "left": -90,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 120,
+      "left": -30,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 120,
+      "left": 30,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 120,
+      "left": 90,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnBuzzer",
+      "top": 120,
+      "left": 150,
+      "attrs": { "color": "black" }
+    }
+  ],
+  "connections": [
+    ["esp1:TX0", "$serialMonitor:RX", "", []],
+    ["esp1:RX0", "$serialMonitor:TX", "", []],
+
+    ["r1:1", "esp1:D23", "red", ["v0"]],
+    ["r1:2", "ledRed:A", "red", ["v0"]],
+    ["ledRed:C", "esp1:GND.1", "black", ["v0"]],
+
+    ["r2:1", "esp1:D22", "blue", ["v0"]],
+    ["r2:2", "ledBlue:A", "blue", ["v0"]],
+    ["ledBlue:C", "esp1:GND.1", "black", ["v0"]],
+
+    ["r3:1", "esp1:D21", "green", ["v0"]],
+    ["r3:2", "ledGreen:A", "green", ["v0"]],
+    ["ledGreen:C", "esp1:GND.1", "black", ["v0"]],
+
+    ["r4:1", "esp1:D19", "yellow", ["v0"]],
+    ["r4:2", "ledYellow:A", "yellow", ["v0"]],
+    ["ledYellow:C", "esp1:GND.1", "black", ["v0"]],
+
+    ["buzzer1:1", "esp1:D15", "purple", ["v0"]],
+    ["buzzer1:2", "esp1:GND.1", "black", ["v0"]],
+
+    ["btn1:1.l", "esp1:GND.2", "black", ["v0"]],
+    ["btn1:2.l", "esp1:D12", "green", ["v0"]],
+
+    ["btn2:1.l", "esp1:GND.2", "black", ["v0"]],
+    ["btn2:2.l", "esp1:D14", "blue", ["v0"]],
+
+    ["btn3:1.l", "esp1:GND.2", "black", ["v0"]],
+    ["btn3:2.l", "esp1:D25", "orange", ["v0"]],
+
+    ["btn4:1.l", "esp1:GND.2", "black", ["v0"]],
+    ["btn4:2.l", "esp1:D26", "red", ["v0"]],
+
+    ["btnBuzzer:1.l", "esp1:GND.2", "black", ["v0"]],
+    ["btnBuzzer:2.l", "esp1:D27", "purple", ["v0"]]
+  ],
+  "dependencies": {}
+}
